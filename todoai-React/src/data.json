@@ -1,0 +1,33 @@
+{
+    "fruits": [
+      {
+        "name": "Apple",
+        "color": "Red",
+        "quantity": 10,
+        "taste": "Sweet",
+        "description": "Apples are crisp and juicy. They come in various shades of red, green, and yellow. They are widely used in pies, salads, and snacks."
+      },
+      {
+        "name": "Banana",
+        "color": "Yellow",
+        "quantity": 15,
+        "taste": "Sweet",
+        "description": "Bananas are elongated and typically yellow when ripe. They are rich in potassium and are a popular choice for a quick, healthy snack."
+      },
+      {
+        "name": "Orange",
+        "color": "Orange",
+        "quantity": 8,
+        "taste": "Citrusy",
+        "description": "Oranges are citrus fruits known for their tangy and sweet flavor. They are a great source of vitamin C and are commonly consumed as fresh fruit or in juices."
+      },
+      {
+        "name": "Grapes",
+        "color": "Purple/Green",
+        "quantity": 20,
+        "taste": "Sweet/Tart",
+        "description": "Grapes grow in clusters and come in various colors like purple, green, red, or black. They are used for making wines, juices, and eaten as a fresh snack."
+      }
+    ]
+  }
+  

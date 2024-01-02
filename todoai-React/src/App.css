@@ -1,0 +1,11 @@
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 5vh;
+}
+
+.body {
+  height: 100vh;
+  background-color: black;
+}
