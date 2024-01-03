@@ -1,0 +1,9 @@
+.navbarBtn {
+    text-align: center;
+    justify-content: center;
+    height: 5vh;
+    width: 5vw;
+    line-height: 5vh;
+    background-color: azure;
+    font-family: 'Roboto Mono', monospace;
+}

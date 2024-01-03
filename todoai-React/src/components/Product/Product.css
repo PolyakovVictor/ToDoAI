@@ -1,19 +1,19 @@
 .product-card {
-    background-color: rgb(0, 60, 255);
-    color: rgb(255, 255, 255);
+    background-color: rgba(78, 78, 80, 0.5);
     border: 1px solid black;
-    border-radius: 10px;
+    border-color: #950740;
     width: 17vw;
     min-width: 120px;
     min-height: 15vh;
     padding: 20px;
     margin-top: 5vh;
+    font-family: 'Roboto Mono', monospace;
+    color: #C3073F;
 }
 
 .product-title {
     text-align: center;
     font-size: large;
-    font-family: fantasy;
     letter-spacing: 1px;
     padding-bottom: 10px;
 }
@@ -21,12 +21,10 @@
 .product-taste {
     font-weight: bold;
     font-size: 1.2em;
-    color: greenyellow;
 }
 
 .product-quantity{
     padding-top: 10px;
-    font-family: fantasy;
     font-size: 1.2em;
     float: right;
 }

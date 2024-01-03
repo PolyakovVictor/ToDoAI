@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 5vh;
+  margin: 0 5vh 5vh 5vh;
 }
 
 .body {
   height: 100vh;
-  background-color: black;
+  background-color: #1A1A1D;
 }

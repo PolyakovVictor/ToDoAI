@@ -1,0 +1,7 @@
+nav {
+    display: flex;
+    align-items: center;
+    border: 1px solid #950740;
+    height: 7vh;
+    justify-content: space-around;
+}

@@ -1,16 +1,18 @@
-import Header from "./components/Header/Header"
+import Navbar from "./components/Navbar/Navbar"
 import Product from "./components/Product/Product"
-import './App.css'
+import NavbarButton from "./components/Navbar/Navbar-button/Navbar-button"
 import fruitsData from './data.json'
+import './App.css'
 
 function App() {
 
     return (
     <div className="body">
-      <Header></Header>
+      <Navbar>
+        <NavbarButton />
+      </Navbar>
 
       <main>
-        <h1>Hello React</h1>
         <div className="content">
           {fruitsData.fruits.map(fruit => (
             <Product fruit={fruit}></Product>
