@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "todoai-flask"
+name = "todoai"
 version = "0.1.0"
 description = ""
 authors = ["Victor Polyakov <polyakov.victor21@gmail.com>"]
@@ -7,10 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-flask = "^3.0.0"
-jwt = "^1.3.1"
-python-dotenv = "^1.0.0"
-pyjwt = "^2.8.0"
+django = "^5.0.1"
+djangorestframework-simplejwt = "^5.3.1"
 
 
 [build-system]
