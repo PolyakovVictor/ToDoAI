@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.css'
+import styles from './Navbar.module.css'
 
 interface NavbarProps {
   children?: React.ReactNode
@@ -7,8 +7,8 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (
-    <nav>
-      <a href="/">title</a>
+    <nav className={styles.nav}>
+      <h1 className={styles.h1}>To Do AI</h1>
       { children }
     </nav>
   );

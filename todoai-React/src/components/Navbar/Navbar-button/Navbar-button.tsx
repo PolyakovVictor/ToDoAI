@@ -1,9 +1,9 @@
 import React from "react";
-import './Navbar-button.css'
+import styles from './Navbar-button.module.css'
 
 const navbarButton: React.FC = () => {
     return (
-        <div className="navbarBtn"> Test </div>
+        <button className={styles.navbarBtn}> AUTH </button>
     );
 };
 

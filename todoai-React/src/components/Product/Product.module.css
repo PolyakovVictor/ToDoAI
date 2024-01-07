@@ -1,29 +1,29 @@
-.product-card {
+.product_card {
     background-color: rgba(78, 78, 80, 0.5);
     border: 1px solid black;
     border-color: #950740;
     width: 17vw;
     min-width: 120px;
     min-height: 15vh;
+    max-height: 40vh;
     padding: 20px;
     margin-top: 5vh;
-    font-family: 'Roboto Mono', monospace;
     color: #C3073F;
 }
 
-.product-title {
+.product_title {
     text-align: center;
     font-size: large;
     letter-spacing: 1px;
     padding-bottom: 10px;
 }
 
-.product-taste {
+.product_topic {
     font-weight: bold;
     font-size: 1.2em;
 }
 
-.product-quantity{
+.product_quantity{
     padding-top: 10px;
     font-size: 1.2em;
     float: right;
