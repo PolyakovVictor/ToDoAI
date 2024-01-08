@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todoai',
+    'goals',
+    'users',
     'rest_framework_simplejwt',
 ]
 
