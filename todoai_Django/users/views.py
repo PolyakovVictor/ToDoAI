@@ -10,8 +10,8 @@ from .serializer import RegisterSerializer, VerifyEmailSerializer
 class RegisterView(APIView):
     serializer_class = RegisterSerializer
 
-    def post(seld, request):
-        serializer = RegisterSerializer(data=request.data) 
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
             # send_verification_email(user) # отправка письма
@@ -20,15 +20,16 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['POST'])
-def verify_email(request):
-    serializer = VerifyEmailSerializer(data=request.data)
-    if serializer.is_valid():
-        try:
-            token = serializer.data['token']
-            user = User.objects.get(email_verify_token=token)
-            user.mark_email_verified() # подтверждение email
+class VerifyEmailView(APIView):
 
-            return Response({'email': 'Успешно подтвержден'}, status=status.HTTP_200_OK)
-        except Exception as e:
-            return Response({'errors': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    def post(self, request):
+        serializer = VerifyEmailSerializer(data=request.data)
+        if serializer.is_valid():
+            try:
+                token = serializer.data['token']
+                user = User.objects.get(email_verify_token=token)
+                user.mark_email_verified()
+
+                return Response({'email': 'Успешно подтвержден'}, status=status.HTTP_200_OK)
+            except Exception as e:
+                return Response({'errors': str(e)}, status=status.HTTP_400_BAD_REQUEST)
