@@ -1,0 +1,8 @@
+.auth_panel {
+    display: flex;
+    border: 1px solid #950740;
+    min-height: 40vh;
+    min-width: 60vh;
+    justify-content: center;
+    align-items: center;
+}

@@ -5,4 +5,15 @@
   
 .main{
     display: flex;
+    width: 100vw;
+    height: 92vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
 }

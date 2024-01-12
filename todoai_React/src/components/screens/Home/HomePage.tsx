@@ -12,7 +12,7 @@ function HomePage() {
       </Navbar>
 
       <main className={styles.main}>
-        <div>
+        <div className={styles.content}>
             <AuthPanel></AuthPanel>
         </div>
       </main>
