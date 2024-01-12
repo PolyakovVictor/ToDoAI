@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './AuthPanel.module.css'
-import AuthForm from './AuthForm/AuthForm'
+import FormLogin from './FormLogin/FormLogin'
+import FormRegister from './FormRegister/FormRegister'
 
 const AuthPanel: React.FC = () => {
-    return (
-        <div className={styles.auth_panel}>
-          <AuthForm isLogin={true}/>
-        </div>
-    )
+  const [formType, setFormType] = useState('login');
+  return (
+      <div className={styles.auth_panel}>
+        {formType === 'login' ? (
+          <FormLogin formType={formType} setFormType={setFormType} />
+        ) : (
+          <FormRegister formType={formType} setFormType={setFormType} />
+        )}
+      </div>
+  )
 }
 
 
