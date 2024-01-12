@@ -1,5 +1,6 @@
 import Navbar from "../global/Navbar/Navbar"
 import NavbarButton from "../global/Navbar/Navbar-button/Navbar-button"
+import AuthPanel from "./AuthPanel/AuthPanel"
 import styles from './HomePage.module.css'
 
 function HomePage() {
@@ -12,7 +13,7 @@ function HomePage() {
 
       <main className={styles.main}>
         <div>
-            asd
+            <AuthPanel></AuthPanel>
         </div>
       </main>
 
