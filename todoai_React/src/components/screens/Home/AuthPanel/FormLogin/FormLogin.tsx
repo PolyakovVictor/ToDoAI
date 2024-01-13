@@ -4,13 +4,13 @@ import { AuthService } from "../../../../../service/auth.service";
 
   
   const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
-    const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
   
     const onSubmit = (e) => {
       e.preventDefault();
       const userData: userLoginData = {
-        'email': email,
+        'username': username,
         'password': password,
       }
       AuthService.login(userData)
@@ -24,10 +24,10 @@ import { AuthService } from "../../../../../service/auth.service";
       <form onSubmit={onSubmit} className={styles.form}>
         <h1>LOGIN</h1>
         <div className={styles.field}>
-          <label htmlFor="">Email</label>
+          <label htmlFor="">Username</label>
           <input 
-            value={email}
-            onChange={e => setEmail(e.target.value)}  
+            value={username}
+            onChange={e => setUsername(e.target.value)}  
           />
         </div>
         <div className={styles.field}>
