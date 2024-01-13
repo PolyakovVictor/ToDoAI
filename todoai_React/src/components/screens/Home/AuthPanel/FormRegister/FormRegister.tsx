@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from './FormRegister.module.css'
-import { RegisterService } from "../../../../../service/register.service";
+import { AuthService } from "../../../../../service/auth.service";
 
   
 const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
@@ -11,12 +11,12 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const userData: User = {
+    const userData: userRegisterData = {
       username,
       email,
       password
     };
-    RegisterService.register(userData);
+    AuthService.register(userData);
   }
 
   const toggleForm = () => {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from './FormLogin.module.css'
+import { AuthService } from "../../../../../service/auth.service";
 
   
   const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
@@ -8,7 +9,11 @@ import styles from './FormLogin.module.css'
   
     const onSubmit = (e) => {
       e.preventDefault();
-      console.log("confirm")
+      const userData: userLoginData = {
+        'email': email,
+        'password': password,
+      }
+      AuthService.login(userData)
     }
 
     const toggleForm = () => {

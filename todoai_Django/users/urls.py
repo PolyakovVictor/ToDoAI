@@ -5,7 +5,6 @@ from rest_framework_simplejwt.views import (
 )
 from .views import RegisterView
 
-
 app_name = 'users'
 
 urlpatterns = [

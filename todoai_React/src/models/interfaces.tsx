@@ -1,11 +1,17 @@
-interface User {
+interface userRegisterData {
     username: string,
     email: string,
     password: string,
 }
 
-interface RegisterService {
-    register(userData: User): Promise<any>;
+interface userLoginData {
+    email: string,
+    password: string,
+}
+
+interface AuthService {
+    register(userData: userRegisterData): Promise<any>;
+    login(userData: userLoginData) : Promise<any>;
 }
 
 interface NavbarProps {
