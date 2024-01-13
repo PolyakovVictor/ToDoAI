@@ -1,10 +1,6 @@
 import { useState } from "react";
 import styles from './FormLogin.module.css'
 
-interface FormProps {
-    formType: 'login' | 'register'
-    setFormType: (formType: 'login' | 'register') => void
-}
   
   const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
     const [email, setEmail] = useState("");
@@ -21,6 +17,7 @@ interface FormProps {
   
     return (
       <form onSubmit={onSubmit} className={styles.form}>
+        <h1>LOGIN</h1>
         <div className={styles.field}>
           <label htmlFor="">Email</label>
           <input 

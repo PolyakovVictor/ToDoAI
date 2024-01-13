@@ -1,14 +1,5 @@
 import styles from './TaskItem.module.css'
 
-interface Props {
-    task: {
-        name: string,
-        taste: string,
-        description: string,
-        quantity: number,
-    }
-}
-
 export default function TaskItem(props: Props) {
     return(
         <div className={styles.todoItemCard}>

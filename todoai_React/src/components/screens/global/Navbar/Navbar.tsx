@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './Navbar.module.css'
 
-interface NavbarProps {
-  children?: React.ReactNode
-}
 
 const Navbar: React.FC<NavbarProps> = ({ children }) => {
   return (

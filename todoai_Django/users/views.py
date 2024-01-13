@@ -13,6 +13,7 @@ class RegisterView(APIView):
         if serializer.is_valid():
             user = serializer.save()
             # send_verification_email(user) # отправка письма
+            print('user successful registered')
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
