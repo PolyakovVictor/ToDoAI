@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import styles from './FormRegister.module.css'
 import { AuthService } from "../../../../../service/auth.service";
 
@@ -9,7 +9,7 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData: userRegisterData = {
       username,

@@ -5,7 +5,7 @@ import HomePage from '../screens/Home/HomePage'
 const Router = () => {
     return <BrowserRouter>
         <Routes>
-            <Route element={<TaskPage />} path='/Task' />
+            <Route element={<TaskPage />} path='/tasks' />
             <Route element={<HomePage />} path='/' />
 
             <Route element={<div>Not found</div>} path='*'/>
