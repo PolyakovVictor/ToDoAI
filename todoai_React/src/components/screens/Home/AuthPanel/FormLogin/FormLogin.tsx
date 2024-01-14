@@ -6,8 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 const submitForm = async (userData: userLoginData) => {
   const response = await AuthService.login(userData);
-  console.log('here--', response)
-
   return response
 }
   

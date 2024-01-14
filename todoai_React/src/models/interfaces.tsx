@@ -12,6 +12,11 @@ interface userLoginData {
 interface AuthService {
     register(userData: userRegisterData): Promise<any>;
     login(userData: userLoginData) : Promise<any>;
+    refreshToken(): Promise<any>;
+}
+
+interface TaskService {
+    getAllTasks(accessToken : string): Promise<any>;
 }
 
 interface NavbarProps {
@@ -28,11 +33,10 @@ interface FormProps {
     setFormType: (formType: 'login' | 'register') => void
 }
 
-interface Props {
-    task: {
-        name: string,
-        taste: string,
-        description: string,
-        quantity: number,
-    }
+interface Task {
+    id: number;
+    text: string;
+    createdAt: Date;
+    finishedAt: Date | null;
+    isCompleted: boolean; 
 }

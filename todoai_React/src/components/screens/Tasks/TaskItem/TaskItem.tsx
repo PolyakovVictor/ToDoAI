@@ -1,15 +1,15 @@
 import styles from './TaskItem.module.css'
 
-export default function TaskItem(props: Props) {
+export default function TaskItem({task}: {task: Task}) {
     return(
         <div className={styles.todoItemCard}>
-            <div className={styles.taskItemTitle}>{props.task.name}</div>
+            <div className={styles.taskItemTitle}>{task.id}</div>
 
-            <div className={styles.taskItemTopic}>Taste: {props.task.taste}</div>
+            <div className={styles.taskItemTopic}>Taste: {task.text}</div>
 
-            <div className={styles.taskItemContent}>{props.task.description}</div>
+            <div className={styles.taskItemContent}>{task.text}</div>
 
-            <div className={styles.taskItemQuantity}>{props.task.quantity} left</div>
+            <div className={styles.taskItemQuantity}>{task.isCompleted ? 'Completed' : 'Not Completed'}</div>
         </div>
     )
 }

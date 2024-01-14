@@ -16,8 +16,21 @@ export const AuthService: AuthService = {
     async login(userData: userLoginData) {
         try {
             const response = await axios.post(import.meta.env.VITE_API_URL + 'users/api/token/', userData);
-            localStorage.setItem("token", response.data.access);
+            localStorage.setItem("accessToken", response.data.access);
+            localStorage.setItem("refreshToken", response.data.refresh);
             return response;
+        } catch (error) {
+            console.error('Error when sending a request:', error);
+            throw error;
+        }
+    },
+
+    async refreshToken() {
+        try {
+            const response = await axios.post(import.meta.env.VITE_API_URL + 'users/api/token/refresh/', {
+                    'refresh': localStorage.getItem('refreshToken'),
+            });
+            localStorage.setItem("accessToken", response.data.access);
         } catch (error) {
             console.error('Error when sending a request:', error);
             throw error;

@@ -1,29 +1,48 @@
 import Navbar from "../global/Navbar/Navbar"
 import TaskItem from "../Tasks/TaskItem/TaskItem"
 import NavbarButton from "../global/Navbar/Navbar-button/Navbar-button"
-import fruitsData from './data.json'
 import styles from './TaskPage.module.css'
 import Sidebar from "../global/Sidebar/Sidebar"
+import { useEffect, useState } from "react"
+import { TaskService } from "../../../service/task.service"
 
 function TaskPage() {
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-    return (
-    <div className={styles.body}>
-      <Navbar>
-        <NavbarButton />
-      </Navbar>
+  useEffect(() => {
+    const fetchData = async () => {
+      const accessToken = localStorage.getItem('accessToken')
 
-      <main className={styles.main}>
-        <Sidebar></Sidebar>
-        <div className={styles.content}>
-          {fruitsData.fruits.map(task => (
-            <TaskItem key={task.name} task={task}></TaskItem>
-            ))}
-        </div>
-      </main>
+      if (accessToken) {
+        const response = await TaskService.getAllTasks(accessToken)
+        console.log(response.data)
+        setTasks(response.data)
+      }
+    }
+    fetchData();
+  }, []);
+  
+  useEffect(() => {
+    console.log('here-->', tasks)
+  }, [tasks]);
 
-    </div>
-)
+  return (
+  <div className={styles.body}>
+    <Navbar>
+      <NavbarButton />
+    </Navbar>
+
+    <main className={styles.main}>
+      <Sidebar></Sidebar>
+      <div className={styles.content}>
+        {tasks.map(task => (
+          <TaskItem key={task.id} task={task}></TaskItem>
+          ))}
+      </div>
+    </main>
+
+  </div>
+  )
 }
 
 export default TaskPage
