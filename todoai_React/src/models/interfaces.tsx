@@ -19,10 +19,6 @@ interface TaskService {
     getAllTasks(accessToken : string): Promise<any>;
 }
 
-interface NavbarProps {
-    children?: React.ReactNode
-}
-
 interface FormProps {
     formType: 'login' | 'register'
     setFormType: (formType: 'login' | 'register') => void
@@ -39,4 +35,8 @@ interface Task {
     createdAt: Date;
     finishedAt: Date | null;
     isCompleted: boolean; 
+}
+
+interface NavbarButtonProps {
+    children: React.ReactNode
 }

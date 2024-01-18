@@ -6,6 +6,7 @@ import FormRegister from './FormRegister/FormRegister'
 const AuthPanel: React.FC = () => {
   const [formType, setFormType] = useState('login');
   return (
+
       <div className={styles.auth_panel}>
         {formType === 'login' ? (
           <FormLogin formType={formType} setFormType={setFormType} />
@@ -13,6 +14,7 @@ const AuthPanel: React.FC = () => {
           <FormRegister formType={formType} setFormType={setFormType} />
         )}
       </div>
+
   )
 }
 

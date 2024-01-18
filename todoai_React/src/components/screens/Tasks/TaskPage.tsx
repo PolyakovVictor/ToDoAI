@@ -1,6 +1,6 @@
 import Navbar from "../global/Navbar/Navbar"
 import TaskItem from "../Tasks/TaskItem/TaskItem"
-import NavbarButton from "../global/Navbar/Navbar-button/Navbar-button"
+import NavbarButton from "../global/Navbar/Navbar-button-Register/Navbar-button-register"
 import styles from './TaskPage.module.css'
 import Sidebar from "../global/Sidebar/Sidebar"
 import { useEffect, useState } from "react"
@@ -28,9 +28,7 @@ function TaskPage() {
 
   return (
   <div className={styles.body}>
-    <Navbar>
-      <NavbarButton />
-    </Navbar>
+    <Navbar/>
 
     <main className={styles.main}>
       <Sidebar></Sidebar>

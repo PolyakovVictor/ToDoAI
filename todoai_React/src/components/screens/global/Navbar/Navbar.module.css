@@ -1,16 +1,29 @@
 .nav {
     display: flex;
     align-items: center;
+    justify-content: right;
     border: 1px solid #950740;
     height: 7vh;
-    justify-content: space-around;
     background-color: #111;
 }
 
-.h1 {
-    text-align: center;
+.logo{
+    position: absolute;
+    left: 0;
+}
+
+.topic{
     line-height: 5vh;
     padding: 1px 1em 1px 1em;
     color: #C3073F;
     border: 1px solid #950740;
+    font-size: 20px;
+    margin-left: 5vw;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 5vw;
 }

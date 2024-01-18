@@ -35,5 +35,5 @@ export const AuthService: AuthService = {
             console.error('Error when sending a request:', error);
             throw error;
         }
-    }
+    },
 }
