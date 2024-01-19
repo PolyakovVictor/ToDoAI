@@ -27,3 +27,21 @@
     height: 100%;
     margin-right: 5vw;
 }
+
+.navbarBtn {
+    padding: 1px 1em 1px 1em;
+    line-height: 5vh;
+    font-family: 'Roboto Mono', monospace;
+    color: #C3073F;
+    border: 1px solid #950740;
+    background-color: #1A1A1D;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+.navbarBtn:hover {
+    background-color: #cf0e48;
+    color: white;
+}

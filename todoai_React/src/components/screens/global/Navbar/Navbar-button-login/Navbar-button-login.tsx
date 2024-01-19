@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from './Navbar-button-login.module.css'
+import navbarStyles from '../Navbar.module.css'
 import AuthPanel from "../../../Home/AuthPanel/AuthPanel";
 
 const navbarButtonLogin: React.FC = () => {
@@ -10,7 +11,7 @@ const navbarButtonLogin: React.FC = () => {
     }
     return (
         <>
-        <button className={styles.navbarBtn} onClick={toggleAuth}> LOGIN </button>
+        <button className={navbarStyles.navbarBtn} onClick={toggleAuth}> LOGIN </button>
         {showAuth && <AuthPanel />}
         </>
     );

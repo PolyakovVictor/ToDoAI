@@ -1,6 +1,6 @@
 import Navbar from "../global/Navbar/Navbar"
 import TaskItem from "../Tasks/TaskItem/TaskItem"
-import NavbarButton from "../global/Navbar/Navbar-button-Register/Navbar-button-register"
+import NavbarButton from "../global/Navbar/Navbar-button-register/Navbar-button-register"
 import styles from './TaskPage.module.css'
 import Sidebar from "../global/Sidebar/Sidebar"
 import { useEffect, useState } from "react"

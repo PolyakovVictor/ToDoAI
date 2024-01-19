@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './Navbar-button-logout.module.css'
+import navbarStyles from '../Navbar.module.css'
 
 const navbarButtonLogout: React.FC = () => {
 
@@ -9,7 +10,7 @@ const navbarButtonLogout: React.FC = () => {
     }
 
     return (
-        <button className={styles.navbarBtn} onClick={handleClick}> LOGOUT </button>
+        <button className={navbarStyles.navbarBtn} onClick={handleClick}> LOGOUT </button>
     );
 };
 
