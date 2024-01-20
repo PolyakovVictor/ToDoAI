@@ -17,6 +17,7 @@ interface AuthService {
 
 interface TaskService {
     getAllTasks(accessToken : string): Promise<any>;
+    createNewTask(accessToken : string, task: Task): Promise<any>;
 }
 
 interface FormProps {
@@ -37,5 +38,5 @@ interface Task {
 }
 
 interface NavbarButtonProps {
-    children: React.ReactNode
+    children: React.ReactNode;
 }

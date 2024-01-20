@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from './Navbar-button-login.module.css'
 import navbarStyles from '../Navbar.module.css'
-import AuthPanel from "../../../Home/AuthPanel/AuthPanel";
+import AuthPanel from "../../AuthPanel/AuthPanel";
 
 const navbarButtonLogin: React.FC = () => {
     const [showAuth, setShowAuth] = useState(false)

@@ -9,8 +9,6 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
-  console.log('register FORM')
-
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData: userRegisterData = {

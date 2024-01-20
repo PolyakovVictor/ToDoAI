@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Navbar.module.css'
 import NavbarButtonLogout from './Navbar-button-logout/Navbar-button-logout';
 import NavbarButtonLogin from './Navbar-button-login/Navbar-button-login';
-import NavbarButtonRegister from './Navbar-button-register/Navbar-button-register';
 import NavbarButtonCreateNewTask from './Navbar-button-createNewTask/Navbar-button-createNewTask';
 
 

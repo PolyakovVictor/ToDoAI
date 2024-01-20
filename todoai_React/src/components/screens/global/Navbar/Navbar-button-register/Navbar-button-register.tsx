@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from './Navbar-button-register.module.css'
 import navbarStyles from '../Navbar.module.css'
 import { useNavigate } from "react-router-dom";
-import AuthPanel from "../../../Home/AuthPanel/AuthPanel";
+import AuthPanel from "../../AuthPanel/AuthPanel";
 
 const navbarButtonRegister: React.FC = () => {
     const navigate = useNavigate()

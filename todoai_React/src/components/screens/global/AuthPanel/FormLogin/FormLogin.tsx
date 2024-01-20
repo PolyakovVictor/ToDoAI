@@ -14,8 +14,6 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  console.log('login FORM')
-
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData: userLoginData = {

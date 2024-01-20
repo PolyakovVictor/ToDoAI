@@ -18,4 +18,20 @@ export const TaskService: TaskService = {
             throw error;
         }
     },
+
+    async createNewTask(accessToken, task: Task) {
+        try {
+            const response = await axios.post(import.meta.env.VITE_API_URL + 'goals/items/', task, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }})
+            return response
+        } catch (error) {
+            if (error.response.status == 401) {
+                AuthService.refreshToken()
+            }
+            console.error('Error when sending a request:', error.response.status);
+            throw error;
+        }
+    },
 }
