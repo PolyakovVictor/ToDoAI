@@ -38,8 +38,6 @@ const Navbar: React.FC = () => {
         <div className={styles.content}>
         <NavbarButtonLogin/>
   
-        <NavbarButtonRegister/>
-  
         </div>
       </nav>
     );

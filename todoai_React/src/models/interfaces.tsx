@@ -24,10 +24,9 @@ interface FormProps {
     setFormType: (formType: 'login' | 'register') => void
 }
 
-interface FormProps {
-    formType: 'login' | 'register'
-    setFormType: (formType: 'login' | 'register') => void
-}
+interface AuthPanelProps {
+    defaultFormType?: 'login' | 'register'; 
+  }
 
 interface Task {
     id: number;
