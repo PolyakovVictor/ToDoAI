@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './Navbar.module.css'
 import NavbarButtonLogout from './Navbar-button-logout/Navbar-button-logout';
 import NavbarButtonLogin from './Navbar-button-login/Navbar-button-login';
-import NavbarButtonCreateNewTask from './Navbar-button-createNewTask/Navbar-button-createNewTask';
 
 
 const Navbar: React.FC = () => {
@@ -17,8 +16,6 @@ const Navbar: React.FC = () => {
         </div>
   
         <div className={styles.content}>
-          <NavbarButtonCreateNewTask/>
-
           <NavbarButtonLogout/>
         </div>
 

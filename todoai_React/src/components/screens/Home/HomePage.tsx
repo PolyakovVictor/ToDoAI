@@ -1,4 +1,5 @@
 import Navbar from "../global/Navbar/Navbar"
+import Sidebar from "../global/Sidebar/Sidebar"
 import styles from './HomePage.module.css'
 
 function HomePage() {
@@ -7,6 +8,7 @@ function HomePage() {
         <Navbar/>
 
         <main className={styles.main}>
+          <Sidebar/>
           <div className={styles.content}>
           </div>
         </main>

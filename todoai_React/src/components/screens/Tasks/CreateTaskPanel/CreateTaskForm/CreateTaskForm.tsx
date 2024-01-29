@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import styles from './CreateTaskForm.module.css'
 import { useNavigate } from "react-router-dom";
 import { TaskService } from "../../../../../service/task.service";
+import { AuthService } from "../../../../../service/auth.service";
 
 
 const submitForm = async (accessToken: string, taskData: Task) => {
@@ -20,9 +21,13 @@ const CreateTaskForm: React.FC = () => {
       'text': text,
     }
     if (accessToken){
-      const response = submitForm(accessToken, taskData)
-      if (await response) {
-        console.log(response)
+      const response = await submitForm(accessToken, taskData)
+      if (response.status == 401){
+        AuthService.refreshToken()
+      }
+      else{
+        console.log(response.status)
+        navigate('/tasks')
       }
     }
   }
