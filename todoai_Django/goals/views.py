@@ -7,7 +7,7 @@ from .serializer import TodoItemSerializer
 
 
 class TodoItemView(APIView):
-    serializer_class = TodoItemSerializer  
+    serializer_class = TodoItemSerializer
     permission_classes = (IsAuthenticated, )
 
     def post(self, request):
@@ -22,8 +22,22 @@ class TodoItemView(APIView):
         serializer = TodoItemSerializer(queryset, many=True)
         return Response(serializer.data)
 
+    def put(self, request, pk):
+        todo_item = self.get_object(pk)
+        serializer = TodoItemSerializer(todo_item, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save(is_completed=True)
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def get_queryset(self):
         return TodoItem.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    def get_object(self, pk):
+        try:
+            return TodoItem.objects.get(pk=pk, user=self.request.user)
+        except TodoItem.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
