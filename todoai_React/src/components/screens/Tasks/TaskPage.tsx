@@ -31,16 +31,19 @@ function TaskPage() {
     <Navbar/>
 
     <main className={styles.main}>
+
       <Sidebar></Sidebar>
+
       <div className={styles.content}>
         {tasks.map(task => (
           <TaskItem key={task.id} task={task}></TaskItem>
           ))}
       </div>
+
     </main>
 
   </div>
   )
 }
 
-export default TaskPage
+export default TaskPage;
