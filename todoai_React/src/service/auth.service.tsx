@@ -31,6 +31,7 @@ export const AuthService: AuthService = {
                     'refresh': localStorage.getItem('refreshToken'),
             });
             localStorage.setItem("accessToken", response.data.access);
+            console.log('access token refreshed')
         } catch (error) {
             console.error('Error when sending a request:', error);
             throw error;

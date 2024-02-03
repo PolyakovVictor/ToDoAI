@@ -1,4 +1,4 @@
-import TaskItemButton from '../TaskItemButton/TaskItemButton'
+import TaskItemCompleteButton from '../TaskItemCompleteButton/TaskItemCompleteButton'
 import styles from './TaskItem.module.css'
 
 export default function TaskItem({task}: {task: Task}) {
@@ -6,13 +6,13 @@ export default function TaskItem({task}: {task: Task}) {
         <div className={styles.taskItemCard}>
             <div className={styles.info}>
                 <div className={styles.taskItemTitle}>id: {task.id}</div>
-                <div className={styles.taskItemQuantity}>{task.isCompleted ? 'Completed' : 'Not Completed'}</div>
+                <div className={styles.taskItemQuantity}>{task.is_completed ? 'Completed' : 'Not Completed'}</div>
             </div>
 
             <div className={styles.taskItemTopic}>Task: {task.text}</div>
 
             <div className={styles.btn}>
-                <TaskItemButton/>
+                <TaskItemCompleteButton id = {task.id}/>
             </div>
         </div>
     )

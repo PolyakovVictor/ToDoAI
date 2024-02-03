@@ -18,6 +18,7 @@ interface AuthService {
 interface TaskService {
     getAllTasks(accessToken : string): Promise<any>;
     createNewTask(accessToken : string, task: Task): Promise<any>;
+    addCompleteTask(accessToken : string, id: number): Promise<any>;
 }
 
 interface FormProps {
@@ -34,9 +35,13 @@ interface Task {
     text: string;
     createdAt: Date;
     finishedAt: Date | null;
-    isCompleted: boolean; 
+    is_completed: boolean; 
 }
 
 interface NavbarButtonProps {
     children: React.ReactNode;
+}
+
+interface TaskItemCompleteButtonProps {
+    id: number;
 }

@@ -34,4 +34,27 @@ export const TaskService: TaskService = {
             throw error;
         }
     },
+
+    async addCompleteTask(accessToken, id: number) {
+        try {
+            const response = await axios.put(
+            import.meta.env.VITE_API_URL + 'goals/items/' + id + '/',
+            {},
+            {
+                headers: {
+                Authorization: `Bearer ${accessToken}`,
+                },
+            }
+            );
+        
+            return response;
+
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                AuthService.refreshToken();
+            }
+            console.error('Error when sending a request:', error.response ? error.response.status : error.message);
+            throw error;
+        }
+    },
 }
