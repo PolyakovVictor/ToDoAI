@@ -9,14 +9,20 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userData: userRegisterData = {
       username,
       email,
       password
     };
-    AuthService.register(userData);
+    const response = await AuthService.register(userData);
+    console.log(response)
+    if (response.status == 201){
+      toggleForm()
+    } else {
+      console.log('Error: ', response.data)
+    }
   }
 
   const toggleForm = () => {

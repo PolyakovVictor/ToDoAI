@@ -9,7 +9,7 @@ const submitForm = async (userData: userLoginData) => {
   return response
 }
   
-const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
+const AuthForm: React.FC<FormProps> = ({ formType, setFormType, onClose }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -21,9 +21,11 @@ const AuthForm: React.FC<FormProps> = ({ formType, setFormType }) => {
       'password': password,
     }
 
-    const response = submitForm(userData)
-    if (await response) {
-      navigate('/tasks')
+    const response = await submitForm(userData)
+    if (response.status == 401) {
+      console.log('Error: ', response.data)
+    } else {
+      onClose()
     }
   }
 

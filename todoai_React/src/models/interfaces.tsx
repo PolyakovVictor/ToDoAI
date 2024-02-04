@@ -24,9 +24,11 @@ interface TaskService {
 interface FormProps {
     formType: 'login' | 'register'
     setFormType: (formType: 'login' | 'register') => void
+    onClose: () => void;
 }
 
 interface AuthPanelProps {
+    onClose: () => void;
     defaultFormType?: 'login' | 'register'; 
   }
 

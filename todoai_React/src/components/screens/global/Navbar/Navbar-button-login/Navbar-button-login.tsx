@@ -12,7 +12,7 @@ const navbarButtonLogin: React.FC = () => {
     return (
         <>
         <button className={navbarStyles.navbarBtn} onClick={toggleAuth}> LOGIN </button>
-        {showAuth && <AuthPanel />}
+        {showAuth && <AuthPanel onClose={toggleAuth} />}
         </>
     );
 };
