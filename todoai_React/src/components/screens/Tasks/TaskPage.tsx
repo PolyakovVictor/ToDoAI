@@ -15,7 +15,6 @@ function TaskPage() {
 
       if (accessToken) {
         const response = await TaskService.getAllTasks(accessToken)
-        console.log(response.data)
         setTasks(response.data)
       }
     }

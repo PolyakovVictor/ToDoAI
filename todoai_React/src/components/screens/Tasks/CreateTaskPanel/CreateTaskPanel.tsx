@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import styles from './CreateTaskPanel.module.css'
 import CreateTaskForm from './CreateTaskForm/CreateTaskForm';
 
-const CreateTaskPanel: React.FC = () => {
-    const [showAuth, setShowAuth] = useState(false)
-
-    const toggleAuth = () => {
-        setShowAuth(prev => !prev)
-    }
+const CreateTaskPanel: React.FC<CreateTaskPanelProps> = ({onClose}) => {
   return (
 
     <div className={styles.panel}>
         
-        <CreateTaskForm />
+        <CreateTaskForm  onClose={onClose}/>
     </div>
 
   )

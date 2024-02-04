@@ -10,10 +10,13 @@ const submitForm = async (accessToken: string, taskData: Task) => {
   return response
 }
   
-const CreateTaskForm: React.FC = () => {
+const CreateTaskForm: React.FC<CreateTaskPanelProps> = ({onClose}) => {
   const accessToken = localStorage.getItem('accessToken')
   const [text, setText] = useState("");
   const navigate = useNavigate();
+  const close = () => {
+    onClose();
+  }
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,11 +26,12 @@ const CreateTaskForm: React.FC = () => {
     if (accessToken){
       const response = await submitForm(accessToken, taskData)
       if (response.status == 401){
-        AuthService.refreshToken()
+        await AuthService.refreshToken()
+        onSubmit(e)
       }
       else{
         console.log(response.status)
-        navigate('/tasks')
+        close()
       }
     }
   }

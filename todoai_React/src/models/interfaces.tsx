@@ -45,3 +45,7 @@ interface NavbarButtonProps {
 interface TaskItemCompleteButtonProps {
     id: number;
 }
+
+interface CreateTaskPanelProps {
+    onClose: () => void;
+}

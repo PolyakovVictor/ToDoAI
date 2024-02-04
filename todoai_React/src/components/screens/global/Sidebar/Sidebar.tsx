@@ -20,7 +20,7 @@ const Sidebar: React.FC = () => {
               <div className={styles.topic}>&nbsp;|--finished</div>
             </div>
           </div>
-            {showPanel && <CreateTaskPanel />}
+            {showPanel && <CreateTaskPanel onClose={showCreateTaskPanel}/>}
         </div>
     )
 }
