@@ -1,11 +1,23 @@
-import React from 'react';
 import styles from './Navbar.module.css'
 import NavbarButtonLogout from './Navbar-button-logout/Navbar-button-logout';
 import NavbarButtonLogin from './Navbar-button-login/Navbar-button-login';
+import { useEffect, useState } from 'react';
 
 
-const Navbar: React.FC = () => {
-  if (localStorage.getItem('accessToken')){
+function Navbar () {
+  const [token, setToken] = useState(localStorage.getItem('accessToken'))
+  useEffect(() => {
+    const handleChangeStorage = () => {
+      setToken(localStorage.getItem('accessToken'));
+    };
+  
+    window.addEventListener('storage', handleChangeStorage);
+    return () => window.removeEventListener('storage', handleChangeStorage);
+  }, []);
+
+
+
+  if (token){
     return (
       <nav className={styles.nav}>
   
