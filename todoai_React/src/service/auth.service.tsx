@@ -33,7 +33,20 @@ export const AuthService: AuthService = {
             localStorage.setItem("accessToken", response.data.access);
             console.log('access token refreshed')
         } catch (error) {
+            if (error.response.status == 401) {
+                this.logout()
+            }
             console.error('Error when sending a request:', error);
+            throw error;
+        }
+    },
+
+    async logout() {
+        try {
+            localStorage.removeItem('accessToken');
+            localStorage.removeItem('refreshToken');
+        } catch (error) {
+            console.error('Error while removing tokens:', error);
             throw error;
         }
     },

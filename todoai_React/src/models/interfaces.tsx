@@ -13,6 +13,7 @@ interface AuthService {
     register(userData: userRegisterData): Promise<any>;
     login(userData: userLoginData) : Promise<any>;
     refreshToken(): Promise<any>;
+    logout(): void ;
 }
 
 interface TaskService {

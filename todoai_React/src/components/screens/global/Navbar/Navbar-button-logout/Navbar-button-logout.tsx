@@ -2,13 +2,13 @@ import React from "react";
 import styles from './Navbar-button-logout.module.css'
 import navbarStyles from '../Navbar.module.css'
 import { useNavigate } from "react-router-dom";
+import { AuthService } from "../../../../../service/auth.service";
 
 const navbarButtonLogout: React.FC = () => {
     const navigate = useNavigate()
 
     function handleClick() {
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
+        AuthService.logout()
         navigate('/')
     }
 
