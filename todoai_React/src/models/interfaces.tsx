@@ -52,3 +52,7 @@ interface TaskItemCompleteButtonProps {
 interface CreateTaskPanelProps {
     onClose: () => void;
 }
+
+interface ErrorMessageProps {
+    message: string | null;
+  }
