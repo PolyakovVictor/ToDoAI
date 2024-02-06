@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
         <div className={styles.sidebar}>
           <div className={styles.content}>
             <div className={styles.section}>
-              <div className={styles.topic} onClick={() => navigate('/tasks')}>Tasks/</div>
+              <div className={styles.topic} onClick={() => navigate('/')}>Tasks/</div>
               <div className={styles.topic}>&nbsp;|--current</div>
               <div className={styles.topic} onClick={() => showCreateTaskPanel()}>&nbsp;|--create_new</div>
               <div className={styles.topic}>&nbsp;|--finished</div>
