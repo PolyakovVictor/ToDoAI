@@ -1,4 +1,5 @@
 import TaskItemCompleteButton from '../TaskItemCompleteButton/TaskItemCompleteButton'
+import TaskItemRemoveButton from '../TaskItemRemoveButton/TaskItemRemoveButton'
 import styles from './TaskItem.module.css'
 
 export default function TaskItem({task}: {task: Task}) {
@@ -11,7 +12,11 @@ export default function TaskItem({task}: {task: Task}) {
 
             <div className={styles.taskItemTopic}>Task: {task.text}</div>
 
-            <div className={styles.btn}>
+            <div className={styles.removeBtn}>
+                <TaskItemRemoveButton id = {task.id}/>
+            </div>
+
+            <div className={styles.completeBtn}>
                 <TaskItemCompleteButton id = {task.id}/>
             </div>
         </div>

@@ -33,8 +33,14 @@
     display: flex;
 }
 
-.btn{
+.completeBtn{
     position: absolute;
     bottom: 10px;
     right: 0;
+}
+
+.removeBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }

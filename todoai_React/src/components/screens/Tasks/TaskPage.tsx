@@ -13,13 +13,16 @@ function TaskPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const accessToken = localStorage.getItem('accessToken')
+      const accessToken = localStorage.getItem('accessToken');
 
       if (accessToken) {
-        const response = await TaskService.getAllTasks(accessToken)
+        const response = await TaskService.getAllTasks(accessToken);
+        if (response.status == 401) {
+          fetchData();
+        }
         setTasks(response.data)
       } else {
-        setNotification('Please authenticate')
+        setNotification('Please authenticate');
       }
     }
     fetchData();

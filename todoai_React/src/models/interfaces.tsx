@@ -20,6 +20,7 @@ interface TaskService {
     getAllTasks(accessToken : string): Promise<any>;
     createNewTask(accessToken : string, task: Task): Promise<any>;
     addCompleteTask(accessToken : string, id: number): Promise<any>;
+    deleteTask(accessToken: string, id: number): Promise<any>;
 }
 
 interface FormProps {

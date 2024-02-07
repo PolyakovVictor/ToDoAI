@@ -13,6 +13,7 @@ export const TaskService: TaskService = {
         } catch (error) {
             if (error.response.status == 401) {
                 AuthService.refreshToken()
+                return error.response
             }
             console.error('Error when sending a request:', error.response.status);
             throw error;
@@ -40,6 +41,28 @@ export const TaskService: TaskService = {
             const response = await axios.put(
             import.meta.env.VITE_API_URL + 'goals/items/' + id + '/',
             {},
+            {
+                headers: {
+                Authorization: `Bearer ${accessToken}`,
+                },
+            }
+            );
+        
+            return response;
+
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                AuthService.refreshToken();
+            }
+            console.error('Error when sending a request:', error.response ? error.response.status : error.message);
+            throw error;
+        }
+    },
+
+    async deleteTask(accessToken, id: number) {
+        try {
+            const response = await axios.delete(
+            import.meta.env.VITE_API_URL + 'goals/items/' + id + '/',
             {
                 headers: {
                 Authorization: `Bearer ${accessToken}`,
