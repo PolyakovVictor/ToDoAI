@@ -30,6 +30,13 @@ class TodoItemView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete(self, request, pk):
+        todo_item = self.get_object(pk)
+        if todo_item:
+            todo_item.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
+
     def get_queryset(self):
         return TodoItem.objects.filter(user=self.request.user)
 

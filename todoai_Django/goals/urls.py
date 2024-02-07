@@ -5,5 +5,5 @@ app_name = 'goals'
 
 urlpatterns = [
     path('items/', TodoItemView.as_view(), name='todoItem'),
-    path('items/<int:pk>/', TodoItemView.as_view(), name='todoItemComplete'),
+    path('items/<int:pk>/', TodoItemView.as_view(), name='todoItemDynamic'),
 ]
