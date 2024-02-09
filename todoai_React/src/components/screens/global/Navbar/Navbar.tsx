@@ -3,9 +3,9 @@ import NavbarButtonLogout from './Navbar-button-logout/Navbar-button-logout';
 import NavbarButtonLogin from './Navbar-button-login/Navbar-button-login';
 import { useEffect, useState } from 'react';
 
+function Navbar() {
+  const [token, setToken] = useState(localStorage.getItem('accessToken'));
 
-function Navbar () {
-  const [token, setToken] = useState(localStorage.getItem('accessToken'))
   useEffect(() => {
     const handleChangeStorage = () => {
       setToken(localStorage.getItem('accessToken'));
@@ -16,40 +16,21 @@ function Navbar () {
   }, []);
 
 
+  return (
+    <nav className={styles.nav}>
 
-  if (token){
-    return (
-      <nav className={styles.nav}>
-  
-        <div className={styles.logo}>
-          <div className={styles.topic}>
-            To Do AI
-          </div>
+      <div className={styles.logo}>
+        <div className={styles.topic}>
+          To Do AI
         </div>
-  
-        <div className={styles.content}>
-          <NavbarButtonLogout/>
-        </div>
+      </div>
 
-      </nav>
-    );
-  } else {
-    return (
-      <nav className={styles.nav}>
-  
-        <div className={styles.logo}>
-          <div className={styles.topic}>
-            To Do AI
-          </div>
-        </div>
-  
-        <div className={styles.content}>
-        <NavbarButtonLogin/>
-  
-        </div>
-      </nav>
-    );
-  }
+      <div className={styles.content}>
+        {token ? <NavbarButtonLogout/> : <NavbarButtonLogin/>}
+      </div>
+
+    </nav>
+  );
 };
 
 export default Navbar;
