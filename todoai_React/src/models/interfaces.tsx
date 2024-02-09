@@ -50,6 +50,11 @@ interface TaskItemCompleteButtonProps {
     id: number;
 }
 
+interface TaskItemDeleteButtonProps {
+    id: number;
+    deleteTask: Function;
+}
+
 interface CreateTaskPanelProps {
     onClose: () => void;
 }

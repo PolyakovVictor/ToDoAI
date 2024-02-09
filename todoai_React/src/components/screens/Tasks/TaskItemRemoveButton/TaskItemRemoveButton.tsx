@@ -10,7 +10,7 @@ const requestFunc = async (accessToken: string, id: number) => {
   return response
 }
 
-const TaskItemRemoveButton: React.FC<TaskItemCompleteButtonProps> = (props) => {
+const TaskItemRemoveButton: React.FC<TaskItemDeleteButtonProps> = (props) => {
     const accessToken = localStorage.getItem('accessToken')
     const id = props.id
   
@@ -22,6 +22,7 @@ const TaskItemRemoveButton: React.FC<TaskItemCompleteButtonProps> = (props) => {
         }
         else{
           console.log(response.status)
+          props.deleteTask(id)
         }
       }
     }

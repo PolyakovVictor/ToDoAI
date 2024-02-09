@@ -11,6 +11,15 @@ function TaskPage() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [notification, setNotification] = useState<string | null>(null);
 
+  const deleteTask = (id: number) => {
+    const index = tasks.findIndex(item => item.id === id)
+
+    if (index !== -1) {
+      const updatedTasks = [...tasks.slice(0, index), ...tasks.slice(index + 1)];
+      setTasks(updatedTasks);
+    }
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       const accessToken = localStorage.getItem('accessToken');
@@ -42,7 +51,7 @@ function TaskPage() {
 
       <div className={styles.content}>
         {tasks.map(task => (
-          <TaskItem key={task.id} task={task}></TaskItem>
+          <TaskItem key={task.id} task={task} deleteTask={deleteTask}></TaskItem>
           ))}
       </div>
 
