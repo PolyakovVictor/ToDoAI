@@ -5,4 +5,4 @@ from .models import TodoItem
 class TodoItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = TodoItem
-        fields = ('id', 'text', 'is_completed')
+        fields = ('id', 'text', 'is_completed', 'processed_text')

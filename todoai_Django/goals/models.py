@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import openai
 
 
 class TodoItem(models.Model):
@@ -8,3 +9,4 @@ class TodoItem(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     finished_at = models.DateTimeField(null=True)
     is_completed = models.BooleanField(default=False)
+    processed_text = models.TextField(blank=True, null=True)

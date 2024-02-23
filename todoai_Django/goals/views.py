@@ -4,6 +4,11 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from .models import TodoItem
 from .serializer import TodoItemSerializer
+import os
+from dotenv import load_dotenv
+import openai
+
+load_dotenv()
 
 
 class TodoItemView(APIView):
@@ -13,7 +18,8 @@ class TodoItemView(APIView):
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.user)
+            task = serializer.save(user=request.user)
+            self.process_task(task)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -48,3 +54,16 @@ class TodoItemView(APIView):
             return TodoItem.objects.get(pk=pk, user=self.request.user)
         except TodoItem.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def process_task(self, task):
+        openai.api_key = os.environ.get('OPENAI_KEY')
+        response = openai.completions.create(
+            model="gpt-3.5-turbo",
+            prompt=task.text,
+            temperature=0.7,
+            max_tokens=100,
+        )
+        processed_text = response.choices[0].text
+
+        task.processed_text = processed_text
+        task.save()

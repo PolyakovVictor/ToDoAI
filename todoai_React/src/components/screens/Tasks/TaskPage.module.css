@@ -10,7 +10,7 @@
 }
 
 .content{
-  height: calc(100vh - 7vh);
+  height: calc(100vh - 7.2vh);
   min-width: 80%;
   display: flex;
   flex-wrap: wrap;
